@@ -1,6 +1,6 @@
 import Hapi from "@hapi/hapi"
-import Routes from "./src/routes/routes"
-import Log from "./src/utils/log"
+import Routes from "./src/routes/routes.js"
+import Log from "./src/utils/log.js"
 
 class Server {
   #server

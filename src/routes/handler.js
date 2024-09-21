@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid"
-import Books from "../data/Books"
-import Log from "../utils/log"
+import Books from "../data/Books.js"
+import Log from "../utils/log.js"
 
 class RouteHandler {
   #books
@@ -78,11 +78,13 @@ class RouteHandler {
     }
 
     if (reading !== undefined) {
-      filteredBooks = books.filter((book) => book.reading === reading)
+      filteredBooks = books.filter((book) => book.reading === Boolean(reading))
     }
 
     if (finished !== undefined) {
-      filteredBooks = books.filter((book) => book.finished === finished)
+      filteredBooks = books.filter(
+        (book) => book.finished === Boolean(finished)
+      )
     }
 
     data = filteredBooks.map((book) => ({

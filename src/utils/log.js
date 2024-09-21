@@ -1,5 +1,5 @@
 import chalk from "chalk"
-import { APP_NAME } from "./constants"
+import { APP_NAME } from "./constants.js"
 
 class Log {
   static log = console.log
