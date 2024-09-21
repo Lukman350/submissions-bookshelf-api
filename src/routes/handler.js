@@ -71,19 +71,21 @@ class RouteHandler {
     let data = []
     let filteredBooks = books
 
-    if (name !== undefined) {
+    if (name) {
       filteredBooks = books.filter((book) =>
         book.name.toLowerCase().includes(name.toLowerCase())
       )
     }
 
-    if (reading !== undefined) {
-      filteredBooks = books.filter((book) => book.reading === Boolean(reading))
+    if (reading) {
+      filteredBooks = books.filter((book) =>
+        reading === "1" ? book.reading === true : book.reading === false
+      )
     }
 
-    if (finished !== undefined) {
-      filteredBooks = books.filter(
-        (book) => book.finished === Boolean(finished)
+    if (finished) {
+      filteredBooks = books.filter((book) =>
+        finished === "1" ? book.finished === true : book.finished === false
       )
     }
 
